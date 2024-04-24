@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tính toán Tiền Điện, Nước và Mạng</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="calculator">
+    <h2>Tính toán Tiền Điện, Nước và Mạng</h2>
+    <label for="electricity">Số điện tiêu thụ (kWh):</label>
+    <input type="number" id="electricity">
+    <label for="water">Số nước tiêu thụ (m3):</label>
+    <input type="number" id="water">
+    <label for="internet">Chi phí mạng (VNĐ/tháng):</label>
+    <input type="number" id="internet">
+    <button onclick="calculate()">Tính toán</button>
+    <div id="result"></div>
+    <div id="electricityCost"></div>
+    <div id="waterCost"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
