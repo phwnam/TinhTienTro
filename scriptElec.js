@@ -22,16 +22,4 @@ function calculate() {
     electricityDiv.innerHTML ="Tiền điện ước tính: " + electricityCost.toLocaleString('vi-VN') + " VNĐ";
     waterDiv.innerHTML ="Tiền nước ước tính: " + waterCost.toLocaleString('vi-VN') + " VNĐ";
   }
-
-  function calculate1(){
-    var elecNumber = parseFloat(document.getElementById('elecNumber').value);
-    var elecChenhLech = parseFloat(document.getElementById('elecChenhLech').value);
-    
-    var bac1 = document.getElementById('bac1');
-    var bac2 = document.getElementById('bac2');
-    var bac3 = document.getElementById('bac3');
-    var bac4 = document.getElementById('bac4');
-    var bac5 = document.getElementById('bac5');
-    var bac6 = document.getElementById('bac6');
-  }
   
