@@ -27,11 +27,20 @@ function calculate() {
     var elecNumber = parseFloat(document.getElementById('elecNumber').value);
     var elecChenhLech = parseFloat(document.getElementById('elecChenhLech').value);
     
+    var dienBac1 = 10 * 1806;
+    var dienBac2 = 10 * 1806;
+    var dienBac3 = 21 * 1806;
+    var dienBac4 = 21 * 1806;
+    var dienBac5 = 21 * 1806;
+    var dienBac6 = 10 * 1806;
+
     var bac1 = document.getElementById('bac1');
     var bac2 = document.getElementById('bac2');
     var bac3 = document.getElementById('bac3');
     var bac4 = document.getElementById('bac4');
     var bac5 = document.getElementById('bac5');
     var bac6 = document.getElementById('bac6');
+
+
   }
   
