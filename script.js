@@ -47,7 +47,32 @@ function calculate1() {
   var elecNumber = elecNumberThisMonth - elecNumberLastMonth;
   var elecChenhLech = parseFloat(document.getElementById('elecChenhLech').value);
 
+  
+   if (elecNumberLastMonth === "") {
+    document.getElementById('elecNumberLastMonth').focus();
+    alert("Vui lòng nhập tháng trước");
+    return;
+  } else if (elecNumberLastMonth < 0) {
+    alert("Vui lòng nhập số điện lớn hơn 0");
+    document.getElementById('elecNumberLastMonth').focus();
+    return;
+  }
 
+  if (elecNumberThisMonth < 0) {
+    alert("Vui lòng nhập số điện lớn hơn 0");
+    document.getElementById('elecNumberThisMonth').focus();
+    return;
+  } else if (elecNumberThisMonth < elecNumberLastMonth) {
+    alert("Số điện tháng này phải lớn hơn hoặc bằng số điện tháng trước");
+    document.getElementById('elecNumberThisMonth').focus();
+    return;
+  }
+
+  if (elecChenhLech < 0) {
+    alert("Số điện chênh lệch phải lớn hơn 0");
+    document.getElementById('elecChenhLech').focus();
+    return;
+  }
 
   var dienBac1 = 10 * 1806;
   var dienBac2 = 10 * 1866;
@@ -77,8 +102,8 @@ function calculate1() {
     bac6.innerHTML = "Điện bậc 6: " + 0;
   } else if (elecNumber <= 20) {
     cost = "Điện bậc 1: " + dienBac1 + (elecNumber - 10) * 1866;
-    bac1.innerHTML = "Điện bậc 1: " +  "10 kWh - " + dienBac1.toLocaleString('vi-VN') + " VNĐ";
-    bac2.innerHTML = "Điện bậc 2: " + (elecNumber -10) +  " kWh - " +((elecNumber - 10) * 1866).toLocaleString('vi-VN') + " VNĐ";
+    bac1.innerHTML = "Điện bậc 1: " + "10 kWh - " + dienBac1.toLocaleString('vi-VN') + " VNĐ";
+    bac2.innerHTML = "Điện bậc 2: " + (elecNumber - 10) + " kWh - " + ((elecNumber - 10) * 1866).toLocaleString('vi-VN') + " VNĐ";
     bac3.innerHTML = "Điện bậc 3: " + 0;
     bac4.innerHTML = "Điện bậc 4: " + 0;
     bac5.innerHTML = "Điện bậc 5: " + 0;
