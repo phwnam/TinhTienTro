@@ -160,3 +160,70 @@ function calculate1() {
   document.getElementById('hr4').classList.remove('hidden');
   document.getElementById('hr5').classList.remove('hidden');
 }
+
+function calculateNuoc(){
+  var waterNumberLastMonth = parseFloat(document.getElementById('waterNumberLastMonth').value);
+  var waterNumberThisMonth = parseFloat(document.getElementById('waterNumberThisMonth').value);
+  var waterNumber = waterNumberThisMonth - waterNumberLastMonth;
+
+  
+  var nuocBac1 = 2 * 8500;
+  var nuocBac2 = 2 * 9900;
+  var nuocBac3 = 2 * 16000;
+  var nuocBac4 = 6 * 27000;
+
+  var nuocbac1 = document.getElementById('nuocbac1');
+  var nuocbac2 = document.getElementById('nuocbac2');
+  var nuocbac3 = document.getElementById('nuocbac3');
+  var nuocbac4 = document.getElementById('nuocbac4');
+
+  document.getElementById('sonuoc').innerHTML = "Số nước tiêu thụ: " + waterNumber + " m3";
+
+  var cost;
+
+  if (waterNumber <= 2) {
+    cost = waterNumber * 8500;
+    nuocbac1.innerHTML = "Nước bậc 1: " + waterNumber + " m3 - " + cost.toLocaleString('vi-VN') + " VNĐ";
+    nuocbac2.innerHTML = "Nước bậc 2: " + 0;
+    nuocbac3.innerHTML = "Nước bậc 3: " + 0;
+    nuocbac4.innerHTML = "Nước bậc 4: " + 0;
+    
+  } else if (waterNumber <= 4) {
+    cost =  nuocBac1 + (waterNumber - 2) * 9900;
+    nuocbac1.innerHTML = "Nước bậc 1: " + "2 m3 - " + nuocBac1.toLocaleString('vi-VN') + " VNĐ";
+    nuocbac2.innerHTML = "Nước bậc 2: " + (waterNumber - 2) + " m3 - " + ((waterNumber - 10) * 9900).toLocaleString('vi-VN') + " VNĐ";
+    nuocbac3.innerHTML = "Nước bậc 3: " + 0;
+    nuocbac4.innerHTML = "Nước bậc 4: " + 0;
+    
+  } else if (waterNumber <= 6) {
+    cost = nuocBac1 + nuocBac2 + (waterNumber - 4) * 16000;
+    nuocbac1.innerHTML = "Nước bậc 1: " + "2 m3 - " + nuocBac1.toLocaleString('vi-VN') + " VNĐ";
+    nuocbac2.innerHTML = "Nước bậc 2: " + "2 m3 - " + nuocBac2.toLocaleString('vi-VN') + " VNĐ";
+    nuocbac3.innerHTML = "Nước bậc 3: " + (waterNumber - 4) + " m3 - " + ((waterNumber - 4) * 16000).toLocaleString('vi-VN') + " VNĐ";
+    nuocbac4.innerHTML = "Nước bậc 4: " + 0;
+    
+  } else {
+    cost = nuocBac1 + nuocBac2 + nuocBac3 + (waterNumber - 6) * 27000;
+    nuocbac1.innerHTML = "Nước bậc 1: " + "2 m3 - " + nuocBac1.toLocaleString('vi-VN') + " VNĐ";
+    nuocbac2.innerHTML = "Nước bậc 2: " + "2 m3 - " + nuocBac2.toLocaleString('vi-VN') + " VNĐ";
+    nuocbac3.innerHTML = "Nước bậc 3: " + "2 m3 - " + nuocBac3.toLocaleString('vi-VN') + " VNĐ";
+    nuocbac4.innerHTML = "Nước bậc 4: " + (waterNumber - 6) + " m3 - " + ((waterNumber - 6) * 27000).toLocaleString('vi-VN') + " VNĐ";
+  }
+
+  document.getElementById('costNuocTruocThue').innerHTML = "Tổng tiền nước trước thuế: " + cost.toLocaleString('vi-VN') + " VNĐ";
+
+  var thue = cost * 0.05;
+  document.getElementById('thueNuoc').innerHTML = "Thuế (5%): " + thue.toLocaleString('vi-VN') + " VNĐ";
+
+  var tongtienNuoc = Math.round(cost + thue);
+  document.getElementById('totalCostNuoc').innerHTML = "Tổng tiền nước sau thuế: " + tongtienNuoc.toLocaleString('vi-VN') + " VNĐ";
+
+  var gia1sonuoc = tongtienNuoc / waterNumber
+  document.getElementById('gia1sonuoc').innerHTML = "Giá 1 số nước (sau thuế): " + gia1sonuoc.toLocaleString('vi-VN') + " VNĐ";
+
+  document.getElementById('hr1nuoc').classList.remove('hiddenwater');
+  document.getElementById('hr2nuoc').classList.remove('hiddenwater');
+  document.getElementById('hr3nuoc').classList.remove('hiddenwater');
+  document.getElementById('hr4nuoc').classList.remove('hiddenwater');
+  document.getElementById('hr5nuoc').classList.remove('hiddenwater');
+}
