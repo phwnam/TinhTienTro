@@ -63,22 +63,31 @@
             <!-- Second Calculator Column -->
             <div class="col-md-6">
                 <div class="calculator">
-                    <h2 class="text-center">Tính điện bậc thang</h2>
+                    <h2 class="text-center">Tính điện bậc thang nhà Vân Canh</h2>
                     <div class="form-group">
-                        <label for="elecNumber">Số điện tiêu thụ (kWh):</label>
-                        <input type="elecNumber" class="form-control" id="elecNumber">
+                        <label for="elecNumber">Số điện tháng trước (kWh):</label>
+                        <input type="elecNumber" class="form-control" id="elecNumberLastMonth">
+                    </div>
+                    <div class="form-group">
+                        <label for="elecNumber">Số điện tháng này (kWh):</label>
+                        <input type="elecNumber" class="form-control" id="elecNumberThisMonth">
                     </div>
                     <div class="form-group">
                         <label for="service">Số điện chênh lệch (VNĐ/tháng) (Nếu có):</label>
                         <input type="elecChenhLech" value="0" class="form-control" id="elecChenhLech">
                     </div>
                     <button class="btn btn-primary btn-block" onclick="calculate1()">Tính toán</button>
+                    <div id="sodien" class="mt-3 text-center"></div>
                     <div id="bac1" class="mt-3 text-center"></div>
                     <div id="bac2" class="mt-3 text-center"></div>
                     <div id="bac3" class="mt-3 text-center"></div>
                     <div id="bac4" class="mt-3 text-center"></div>
                     <div id="bac5" class="mt-3 text-center"></div>
                     <div id="bac6" class="mt-3 text-center"></div>
+                    <div id="thue" class="mt-3 text-center"> </div>
+
+                    <div id="totalCost" class="mt-3 text-center"></div>
+
                 </div>
             </div>
         </div>
