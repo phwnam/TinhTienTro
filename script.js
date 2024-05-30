@@ -44,8 +44,9 @@ function calculate1() {
 
   var elecNumberLastMonth = parseFloat(document.getElementById('elecNumberLastMonth').value);
   var elecNumberThisMonth = parseFloat(document.getElementById('elecNumberThisMonth').value);
-  var elecNumber = elecNumberThisMonth - elecNumberLastMonth;
   var elecChenhLech = parseFloat(document.getElementById('elecChenhLech').value);
+
+  var elecNumber = elecNumberThisMonth - elecNumberLastMonth + elecChenhLech;
 
   
    if (elecNumberLastMonth === "") {
@@ -147,7 +148,7 @@ function calculate1() {
   var thue = cost * 0.08;
   document.getElementById('thue').innerHTML = "Thuế (8%): " + thue.toLocaleString('vi-VN') + " VNĐ";
 
-  var tongtien = cost + thue + elecChenhLech
+  var tongtien = cost + thue;
   document.getElementById('totalCost').innerHTML = "Tổng tiền sau thuế: " + tongtien.toLocaleString('vi-VN') + " VNĐ";
 
   var gia1sodien = tongtien / elecNumber
