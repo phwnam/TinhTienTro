@@ -43,37 +43,12 @@ function calculate() {
 function calculate1() {
 
   var elecNumberLastMonth = parseFloat(document.getElementById('elecNumberLastMonth').value);
+  console.log(elecNumberLastMonth);
   var elecNumberThisMonth = parseFloat(document.getElementById('elecNumberThisMonth').value);
+  console.log(elecNumberThisMonth);
   var elecChenhLech = parseFloat(document.getElementById('elecChenhLech').value);
 
   var elecNumber = elecNumberThisMonth - elecNumberLastMonth + elecChenhLech;
-
-  
-   if (elecNumberLastMonth === "") {
-    document.getElementById('elecNumberLastMonth').focus();
-    alert("Vui lòng nhập tháng trước");
-    return;
-  } else if (elecNumberLastMonth < 0) {
-    alert("Vui lòng nhập số điện lớn hơn 0");
-    document.getElementById('elecNumberLastMonth').focus();
-    return;
-  }
-
-  if (elecNumberThisMonth < 0) {
-    alert("Vui lòng nhập số điện lớn hơn 0");
-    document.getElementById('elecNumberThisMonth').focus();
-    return;
-  } else if (elecNumberThisMonth < elecNumberLastMonth) {
-    alert("Số điện tháng này phải lớn hơn hoặc bằng số điện tháng trước");
-    document.getElementById('elecNumberThisMonth').focus();
-    return;
-  }
-
-  if (elecChenhLech < 0) {
-    alert("Số điện chênh lệch phải lớn hơn 0");
-    document.getElementById('elecChenhLech').focus();
-    return;
-  }
 
   var dienBac1 = 10 * 1806;
   var dienBac2 = 10 * 1866;
@@ -143,13 +118,13 @@ function calculate1() {
     bac6.innerHTML = "Điện bậc 6: " + (elecNumber - 83) + " kWh - " + ((elecNumber - 83) * 3151).toLocaleString('vi-VN') + " VNĐ";
 
   }
-  document.getElementById('costTruocThue').innerHTML = "Tổng tiền trước thuế: " + cost.toLocaleString('vi-VN') + " VNĐ";
+  document.getElementById('costTruocThue').innerHTML = "Tổng tiền điện trước thuế: " + cost.toLocaleString('vi-VN') + " VNĐ";
 
   var thue = cost * 0.08;
   document.getElementById('thue').innerHTML = "Thuế (8%): " + thue.toLocaleString('vi-VN') + " VNĐ";
 
   var tongtien = cost + thue;
-  document.getElementById('totalCost').innerHTML = "Tổng tiền sau thuế: " + tongtien.toLocaleString('vi-VN') + " VNĐ";
+  document.getElementById('totalCost').innerHTML = "<strong>Tổng tiền diện sau thuế: " + tongtien.toLocaleString('vi-VN') + " VNĐ</ strong>";
 
   var gia1sodien = tongtien / elecNumber
   document.getElementById('gia1sodien').innerHTML = "Giá 1 số điện (sau thuế): " + gia1sodien.toLocaleString('vi-VN') + " VNĐ";
@@ -216,7 +191,7 @@ function calculateNuoc(){
   document.getElementById('thueNuoc').innerHTML = "Thuế (5%): " + thue.toLocaleString('vi-VN') + " VNĐ";
 
   var tongtienNuoc = Math.round(cost + thue);
-  document.getElementById('totalCostNuoc').innerHTML = "Tổng tiền nước sau thuế: " + tongtienNuoc.toLocaleString('vi-VN') + " VNĐ";
+  document.getElementById('totalCostNuoc').innerHTML = "<strong>Tổng tiền nước sau thuế: " + tongtienNuoc.toLocaleString('vi-VN') + " VNĐ </strong>";
 
   var gia1sonuoc = tongtienNuoc / waterNumber
   document.getElementById('gia1sonuoc').innerHTML = "Giá 1 số nước (sau thuế): " + gia1sonuoc.toLocaleString('vi-VN') + " VNĐ";
