@@ -52,9 +52,9 @@ function calculate1() {
 
   var dienBac1 = 10 * 1806;
   var dienBac2 = 10 * 1866;
-  var dienBac3 = 21 * 2167;
-  var dienBac4 = 21 * 2729;
-  var dienBac5 = 21 * 3050;
+  var dienBac3 = 20 * 2167;
+  var dienBac4 = 20 * 2729;
+  var dienBac5 = 20 * 3050;
   var dienBac6 = 10 * 3151;
 
   var bac1 = document.getElementById('bac1');
@@ -93,29 +93,29 @@ function calculate1() {
     bac5.innerHTML = "Điện bậc 5: " + 0;
     bac6.innerHTML = "Điện bậc 6: " + 0;
   } else if (elecNumber <= 62) {
-    cost = dienBac1 + dienBac2 + dienBac3 + (elecNumber - 41) * 2729;
+    cost = dienBac1 + dienBac2 + dienBac3 + (elecNumber - 40) * 2729;
     bac1.innerHTML = "Điện bậc 1: " + "10 kWh - " + dienBac1.toLocaleString('vi-VN') + " VNĐ";
     bac2.innerHTML = "Điện bậc 2: " + "10 kWh - " + dienBac2.toLocaleString('vi-VN') + " VNĐ";
     bac3.innerHTML = "Điện bậc 3: " + "21 kWh - " + dienBac3.toLocaleString('vi-VN') + " VNĐ";
-    bac4.innerHTML = "Điện bậc 4: " + (elecNumber - 41) + " kWh - " + ((elecNumber - 41) * 2729).toLocaleString('vi-VN') + " VNĐ";
+    bac4.innerHTML = "Điện bậc 4: " + (elecNumber - 40) + " kWh - " + ((elecNumber - 40) * 2729).toLocaleString('vi-VN') + " VNĐ";
     bac5.innerHTML = "Điện bậc 5: " + 0;
     bac6.innerHTML = "Điện bậc 6: " + 0;
   } else if (elecNumber <= 83) {
-    cost = dienBac1 + dienBac2 + dienBac3 + dienBac4 + (elecNumber - 62) * 3050;
+    cost = dienBac1 + dienBac2 + dienBac3 + dienBac4 + (elecNumber - 60) * 3050;
     bac1.innerHTML = "Điện bậc 1: " + "10 kWh - " + dienBac1.toLocaleString('vi-VN') + " VNĐ";
     bac2.innerHTML = "Điện bậc 2: " + "10 kWh - " + dienBac2.toLocaleString('vi-VN') + " VNĐ";
     bac3.innerHTML = "Điện bậc 3: " + "21 kWh - " + dienBac3.toLocaleString('vi-VN') + " VNĐ";
     bac4.innerHTML = "Điện bậc 4: " + "21 kWh - " + dienBac4.toLocaleString('vi-VN') + " VNĐ";
-    bac5.innerHTML = "Điện bậc 5: " + (elecNumber - 62) + " kWh - " + ((elecNumber - 62) * 3050).toLocaleString('vi-VN') + " VNĐ";
+    bac5.innerHTML = "Điện bậc 5: " + (elecNumber - 60) + " kWh - " + ((elecNumber - 60) * 3050).toLocaleString('vi-VN') + " VNĐ";
     bac6.innerHTML = "Điện bậc 6: " + 0;
   } else {
-    cost = dienBac1 + dienBac2 + dienBac3 + dienBac4 + dienBac5 + (elecNumber - 83) * 3151;
+    cost = dienBac1 + dienBac2 + dienBac3 + dienBac4 + dienBac5 + (elecNumber - 80) * 3151;
     bac1.innerHTML = "Điện bậc 1: " + "10 kWh - " + dienBac1.toLocaleString('vi-VN') + " VNĐ";
     bac2.innerHTML = "Điện bậc 2: " + "10 kWh - " + dienBac2.toLocaleString('vi-VN') + " VNĐ";
     bac3.innerHTML = "Điện bậc 3: " + "21 kWh - " + dienBac3.toLocaleString('vi-VN') + " VNĐ";
     bac4.innerHTML = "Điện bậc 4: " + "21 kWh - " + dienBac4.toLocaleString('vi-VN') + " VNĐ";
     bac5.innerHTML = "Điện bậc 5: " + "21 kWh - " + dienBac5.toLocaleString('vi-VN') + " VNĐ";
-    bac6.innerHTML = "Điện bậc 6: " + (elecNumber - 83) + " kWh - " + ((elecNumber - 83) * 3151).toLocaleString('vi-VN') + " VNĐ";
+    bac6.innerHTML = "Điện bậc 6: " + (elecNumber - 80) + " kWh - " + ((elecNumber - 80) * 3151).toLocaleString('vi-VN') + " VNĐ";
 
   }
   document.getElementById('costTruocThue').innerHTML = "Tổng tiền điện trước thuế: " + cost.toLocaleString('vi-VN') + " VNĐ";
