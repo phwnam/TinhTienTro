@@ -166,7 +166,7 @@ function calculateNuoc(){
   } else if (waterNumber <= 4) {
     cost =  nuocBac1 + (waterNumber - 2) * 9900;
     nuocbac1.innerHTML = "Nước bậc 1: " + "2 m3 - " + nuocBac1.toLocaleString('vi-VN') + " VNĐ";
-    nuocbac2.innerHTML = "Nước bậc 2: " + (waterNumber - 2) + " m3 - " + ((waterNumber - 10) * 9900).toLocaleString('vi-VN') + " VNĐ";
+    nuocbac2.innerHTML = "Nước bậc 2: " + (waterNumber - 2) + " m3 - " + ((waterNumber - 2) * 9900).toLocaleString('vi-VN') + " VNĐ";
     nuocbac3.innerHTML = "Nước bậc 3: " + 0;
     nuocbac4.innerHTML = "Nước bậc 4: " + 0;
     
